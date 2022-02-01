@@ -16,10 +16,6 @@ class RecipeMainActivity: AppCompatActivity()  {
         binding = ActivityRecipeMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction()
-            .replace(binding.fragmentContainerView.id, RecipeListFragment())
-            .commit()
-
     }
 
 }
