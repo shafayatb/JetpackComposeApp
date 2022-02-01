@@ -11,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
@@ -35,29 +36,49 @@ class MainActivity : AppCompatActivity() {
                 Image(
                     painter = painterResource(id = R.drawable.ic_launcher_foreground),
                     contentDescription = "",
-                    modifier = Modifier.height(300.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(300.dp),
                     contentScale = ContentScale.Crop
                 )
                 Column(
                     modifier = Modifier.padding(16.dp)
                 ) {
-                    Text(
-                        text = "Android Logo",
-                        style = TextStyle(
-                            fontSize = 17.sp
+                    Spacer(modifier = Modifier.padding(top = 10.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = "Android Logo",
+                            style = TextStyle(
+                                fontSize = 17.sp
+                            )
                         )
-                    )
+                        Text(
+                            text = "$4.99",
+                            style = TextStyle(
+                                color= Color(0xFF85bb65),
+                                fontSize = 15.sp
+                            ),
+                            modifier = Modifier.align(Alignment.CenterVertically)
+                        )
+                    }
+
                     Spacer(modifier = Modifier.padding(top = 10.dp))
                     Text(
-                        text = "$4.99",
+                        text = "Premium Logo",
                         style = TextStyle(
                             color= Color(0xFF85bb65),
                             fontSize = 17.sp
                         )
                     )
                     Spacer(modifier = Modifier.padding(top = 10.dp))
-                    Button(onClick = { }) {
-                        Text(text = "Compose Button")
+                    Button(
+                        onClick = { },
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
+                    ) {
+                        Text(text = "Order Now")
                     }
                 }
             }
